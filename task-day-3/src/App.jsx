@@ -1,18 +1,23 @@
 import BottomNavbar from "./components/BottomNavbar"
+import GridcontrolSection from "./components/GridcontrolSection"
 import Navbar from "./components/Navbar"
 
 
 function App() {
   return (
     <div className="bg-neutral-950 min-h-screen">
-      <header className="md:hidden">
+      {/* navbar  */}
+      <nav className="md:hidden">
         <Navbar />
-      </header>
-      <div className="md:hidden">
+        {/* bottom navbar  */}
         <div className="absolute bottom-0 w-full">
           <BottomNavbar />
         </div>
-      </div>
+      </nav>
+      <main className="max-w-7xl mx-auto px-4">
+        <GridcontrolSection />
+      </main>
+
     </div>
   )
 }
