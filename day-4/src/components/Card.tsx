@@ -1,21 +1,20 @@
-import React from 'react'
-
 type CardVariant = "media" | "stats" | "profile";
 
 interface CardProps {
     variant: CardVariant;
-    title: string;
-    description?: string;
     image?: string;
+    title?: string;
+    description?: string;
     label?: string;
-    value?: number;
+    value?: string | number;
+    avatar?: string;
     name?: string;
     role?: string;
-    avatar?: string;
 }
 
 export default function Card(props: CardProps) {
     const { variant } = props;
+
     switch (variant) {
         case "media":
             return (
@@ -36,8 +35,8 @@ export default function Card(props: CardProps) {
                         </p>
                     </div>
                 </div>
+            );
 
-            )
         case "stats":
             return (
                 <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -50,6 +49,7 @@ export default function Card(props: CardProps) {
                     </h2>
                 </div>
             );
+
         case "profile":
             return (
                 <div className="rounded-2xl bg-white p-6 text-center shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -68,6 +68,7 @@ export default function Card(props: CardProps) {
                     </p>
                 </div>
             );
+
         default:
             return null;
     }
